@@ -67,7 +67,6 @@ public class TocaDisco {
 			System.out.println("Insira apenas discos.");
 			Agulha.levanta();
 		}
-		setEmFuncionamento(true);
 		Agulha.abaixa();
 	}
 }
@@ -104,7 +103,6 @@ private static void levanta() {
 private static void abaixa() {
 	if(agulha.getEstaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
 	System.out.println("A agulha retorna ao seu habitat natural, junto com a música.");
-	tocaDisco.emFuncionamento=true;
 	Agulha.setEstaLevantada(true);
 }
 }
