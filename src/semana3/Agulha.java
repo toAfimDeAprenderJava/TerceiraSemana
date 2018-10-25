@@ -40,6 +40,6 @@ protected void levanta() {
 protected void abaixa() {
 	if(agulha.getEstaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
 	System.out.println("A agulha retorna ao seu habitat natural, junto com a música.");
-	Agulha.setEstaLevantada(true);
+	Agulha.setEstaLevantada(false);
 }
 }
