@@ -13,42 +13,42 @@ public class TocaDisco {
 	private String modelo;
 	private boolean suporta45rpm;
 	//getters e setters dos atributos
-	private String getMarca() {
+	protected String getMarca() {
 		return marca;
 	}
 	
-	private String getModelo() {
+	protected String getModelo() {
 		return modelo;
 	}
 
-	private boolean getSuporta45rpm() {
+	protectedboolean getSuporta45rpm() {
 		return suporta45rpm;
 	}
 	
-	private boolean getEmFuncionamento() {
+	protected boolean getEmFuncionamento() {
 		return emFuncionamento;
 	}
 	
-	private void setMarca(String marca) {
+	protected void setMarca(String marca) {
 		this.marca=marca;
 	}
 	
-	private void setModelo(String modelo) {
+	protected void setModelo(String modelo) {
 		this.modelo=modelo;
 	}
 	
-	private void setSuporta45rpm(boolean suporta45rpm) {
+	protected void setSuporta45rpm(boolean suporta45rpm) {
 		this.suporta45rpm=suporta45rpm;
 	}
 	
-	private boolean setEmFuncionamento(boolean emFuncionamento) {
+	protected boolean setEmFuncionamento(boolean emFuncionamento) {
 		if(this.emFuncionamento==emFuncionamento) break; //pula se nada mudou (evitar erros se algo na implementação do onoff é alterado, por padrão isso não aconteceria)
 		this.emFuncionamento=emFuncionamento;
 	}
 	
 
 	//métodos
-	private static void onoff() {
+	protected static void onoff() {
 		if(getEmFuncionamento()==false) {
 			setEmFuncionamento (true);
 		} else{
@@ -58,7 +58,7 @@ public class TocaDisco {
 		System.out.println("Seu " + getMarca() + " " + getModelo() + " está agora " + (getEmFuncionamento() ? "ligado." : "desligado."));
 	}
 	
-	private static void insereDisco(int polegadas) {
+	protected static void insereDisco(int polegadas) {
 		if((polegadas==7) && (getSuporta45rpm==false)) {
 			System.out.println("Disco não pode ser tocado.");
 			Agulha.levanta();
@@ -77,33 +77,62 @@ public class Agulha {
 	private int precisao;
 	boolean estaLevantada=true;
 
-private String getTipo() {
+protected String getTipo() {
 	return tipo;
 }
 
-private boolean getEstaLevantada(){
+protected boolean getEstaLevantada(){
 	return estaLevantada;
 }
 
-private void setTipo(String tipo) {
+protected void setTipo(String tipo) {
 	this.tipo=tipo;
 }
 
-private boolean setEstaLevantada(boolean estaLevantada) {
+protected void setPeso(int peso) {
+	this.peso=peso;
+}
+
+protected void setPrecisao(int precisao) {
+	this.precisao=precisao;
+}
+
+protected void setEstaLevantada(boolean estaLevantada) {
 	this.estaLevantada=estaLevantada;
 }
 
-private static void levanta() {
+protected static void levanta() {
 	if(TocaDisco.getEmFuncionamento()==false) System.out.println("Sua caríssima agulha de tipo " + getTipo() + " se perde em meio aos fios dos eletrodomésticos. Boa sorte");
 	if(getEstaLevantada()==true) System.out.println("A agulha aponta para o teto e reproduz a melodia que consegue capturar de uma lâmpada.");
 	System.out.println("O pitch diminui até finalmente chegar em 0. A música para");
 	setEstaLevantada(true);
 }
 
-private static void abaixa() {
+protected static void abaixa() {
 	if(agulha.getEstaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
 	System.out.println("A agulha retorna ao seu habitat natural, junto com a música.");
 	Agulha.setEstaLevantada(true);
 }
 }
 
+public class Abstracao {
+	public static void main(String[] args) {
+		Agulha at=new Agulha();
+		at.setTipo("Shibata");
+		at.setPeso(3);
+		at.setPrecisao(6);
+		TocaDisco principal=new TocaDisco();
+		principal.setMarca("Rega");
+		principal.setModelo("Planar P1");
+		principal.setSuporta45rpm(true);
+		
+		TocaDisco apoio=new TocaDisco();
+		apoio.setMarca("Technics");
+		apoio.setModelo("1200 MK2");
+		apoio.setSuporta45rpm(false);
+		
+		principal.onoff();
+		apoio.onoff();
+		at.levanta();
+	}
+}
