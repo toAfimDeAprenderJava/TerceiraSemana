@@ -55,20 +55,20 @@ public class TocaDisco {
 			Agulha.levanta();
 		setEmFuncionamento (false);
 		}
-		System.out.println("Seu " + getMarca() + " " + getModelo() + " está agora " + (getEmFuncionamento() ? "ligado." : "desligado."))
+		System.out.println("Seu " + getMarca() + " " + getModelo() + " está agora " + (getEmFuncionamento() ? "ligado." : "desligado."));
 	}
 	
 	private static void insereDisco(int polegadas) {
 		if((polegadas==7) && (getSuporta45rpm==false)) {
 			System.out.println("Disco não pode ser tocado.");
-			setEmFuncionamento(false);
+			Agulha.levanta();
 		}
 		if(polegadas!=12) {
 			System.out.println("Insira apenas discos.");
-			setEmFuncionamento(false);
+			Agulha.levanta();
 		}
 		setEmFuncionamento(true);
-		System.out.println("O braço repousa sobre o prato");
+		Agulha.abaixa();
 	}
 }
 
