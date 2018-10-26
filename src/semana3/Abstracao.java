@@ -8,7 +8,7 @@ package semana3;
  */
 public class Abstracao {
 	public static void main(String[] args) {
-		
+// Objetos vida real		
 	
 	}
 }
