@@ -7,11 +7,11 @@ public class Agulha {
 	boolean estaLevantada=true;
 
 protected String getTipo() {
-	return tipo;
+	return this.tipo;
 }
 
 protected boolean getEstaLevantada(){
-	return estaLevantada;
+	return this.estaLevantada;
 }
 
 protected void setTipo(String tipo) {
@@ -30,16 +30,16 @@ protected void setEstaLevantada(boolean estaLevantada) {
 	this.estaLevantada=estaLevantada;
 }
 
-protected void levanta() {
-	if(TocaDisco.getEmFuncionamento()==false) System.out.println("Sua caríssima agulha de tipo " + getTipo() + " se perde em meio aos fios dos eletrodomésticos. Boa sorte");
-	if(getEstaLevantada()==true) System.out.println("A agulha aponta para o teto e reproduz a melodia que consegue capturar de uma lâmpada.");
+protected static void levanta() {
+	if(TocaDisco.getEmFuncionamento()==false) System.out.println("Sua caríssima agulha de tipo " + this.getTipo() + " se perde em meio aos fios dos eletrodomésticos. Boa sorte");
+	if(this.getEstaLevantada()==true) System.out.println("A agulha aponta para o teto e reproduz a melodia que consegue capturar de uma lâmpada.");
 	System.out.println("O pitch diminui até finalmente chegar em 0. A música para");
-	setEstaLevantada(true);
+	this.setEstaLevantada(true);
 }
 
-protected void abaixa() {
-	if(agulha.getEstaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
+protected static void abaixa() {
+	if(this.getEstaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
 	System.out.println("A agulha retorna ao seu habitat natural, junto com a música.");
-	Agulha.setEstaLevantada(false);
+	this.setEstaLevantada(false);
 }
 }

@@ -7,19 +7,19 @@ public class TocaDisco {
 	private boolean suporta45rpm;
 	//getters e setters dos atributos
 	protected String getMarca() {
-		return marca;
+		return this.marca;
 	}
 	
 	protected String getModelo() {
-		return modelo;
+		return this.modelo;
 	}
 
 	protected boolean getSuporta45rpm() {
-		return suporta45rpm;
+		return this.suporta45rpm;
 	}
 	
 	protected boolean getEmFuncionamento() {
-		return emFuncionamento;
+		return this.emFuncionamento;
 	}
 	
 	protected void setMarca(String marca) {
@@ -42,24 +42,24 @@ public class TocaDisco {
 
 	//métodos
 	protected void onoff() {
-		if(getEmFuncionamento()==false) {
-			setEmFuncionamento (true);
+		if(this.getEmFuncionamento()==false) {
+			this.setEmFuncionamento (true);
 		} else{
-			Agulha.levanta();
-		setEmFuncionamento (false);
+			at.levanta();
+		this.setEmFuncionamento (false);
 		}
-		System.out.println("Seu " + getMarca() + " " + getModelo() + " está agora " + (getEmFuncionamento() ? "ligado." : "desligado."));
+		System.out.println("Seu " + this.getMarca() + " " + this.getModelo() + " está agora " + (this.getEmFuncionamento() ? "ligado." : "desligado."));
 	}
 	
 	protected void insereDisco(int polegadas) {
-		if((polegadas==7) && (getSuporta45rpm==false)) {
+		if((polegadas==7) && (this.getSuporta45rpm==false)) {
 			System.out.println("Disco não pode ser tocado.");
-			Agulha.levanta();
+			at.levanta();
 		}
 		if(polegadas!=12) {
 			System.out.println("Insira apenas discos.");
-			Agulha.levanta();
+			at.levanta();
 		}
-		Agulha.abaixa();
+		at.abaixa();
 	}
 }
