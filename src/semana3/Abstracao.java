@@ -17,6 +17,10 @@ public class Abstracao {
 		public void ligar() {
 			ligada = true;
 		}
+		public void setligada(boolean ligada) { 
+ 
+			this.ligada = ligada; 
+		}
 
 		public boolean getliga() {
 			return ligada;
@@ -28,7 +32,10 @@ public class Abstracao {
 				throw new RuntimeException();
 			this.mudarcanal = canal;
 		}
+		public void set(int mudarcanal) { 
 
+			this.mudarcanal = mudarcanal; 
+		}
 		public int getmudarcanal() {
 
 			return mudarcanal;
@@ -38,7 +45,10 @@ public class Abstracao {
 		public void volume(double quantidade) {
 			this.volume = this.volume += quantidade;
 		}
+		public void volume(String volume) { 
+			this.volume = volume; 
 
+		}
 		public String getvolume() {
 
 			return volume;
@@ -47,7 +57,9 @@ public class Abstracao {
 		public void desligartv() {
 			desligartv = true;
 		}
-
+		public void setTitulo(boolean desligartv) {  
+			this.desligartv = desligartv; 
+		}
 		public boolean getdesligartv() {
 			return desligartv;
 		}
