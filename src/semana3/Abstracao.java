@@ -6,9 +6,11 @@ package semana3;
  * encapsule todos os metodos e atributos
  *
  */
+
 public class Abstracao {
 	public static void main(String[] args) {
-		
+
+	
 	
 	}
 }
