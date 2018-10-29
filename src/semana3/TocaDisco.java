@@ -77,7 +77,7 @@ public class TocaDisco {
 	}
 	
 	protected void insereDisco(int polegadas) {
-		if((polegadas==7) && (this.getSuporta45rpm==false)) {
+		if((polegadas==7) && (this.getSuporta45rpm()==false)) {
 			System.out.println("Disco não pode ser tocado.");
 			this.agulhaLevanta();
 		}
