@@ -1,6 +1,7 @@
 package semana3;
 
 public class TocaDisco {
+	private boolean ligado=false;
 	private boolean emFuncionamento=false;
 	private String marca;
 	private String modelo;
@@ -22,7 +23,10 @@ public class TocaDisco {
 	protected boolean getSuporta45rpm() {
 		return this.suporta45rpm;
 	}
-	
+
+	protected boolean getLigado() {
+		return this.ligado;
+	}
 	protected boolean getEmFuncionamento() {
 		return this.emFuncionamento;
 	}
@@ -53,10 +57,8 @@ public class TocaDisco {
 	}
 	
 	protected void setEmFuncionamento(boolean emFuncionamento) {
-		if(this.emFuncionamento==emFuncionamento) System.out.println("O que você acha que acontece?");
 		this.emFuncionamento=emFuncionamento;
 	}
-
 	protected void setAgulhaTipo (String tipo) {
 		this.agulhaTipo=tipo;
 	}
@@ -68,41 +70,56 @@ public class TocaDisco {
 	protected void setAgulhaPeso(int peso) {
 		this.agulhaPeso=peso;
 	}
+	protected void setLigado(boolean ligado) {
+		this.ligado=ligado;
+	}
 	//setAgulhaLevantada vem aí
 
 	//métodos
 	protected void onoff() {
-		if(this.getEmFuncionamento()==false) {
-			this.setEmFuncionamento (true);
+		if(this.getLigado()==false) {
+			this.setLigado (true);
 		} else{
 			this.agulhaLevanta();
-		this.setEmFuncionamento (false);
+		this.setLigado (false);
 		}
-		System.out.println("Seu " + this.getMarca() + " " + this.getModelo() + " está agora " + (this.getEmFuncionamento() ? "ligado." : "desligado.")); //essa linha é pura majestade sintática
+		System.out.println("Seu " + this.getMarca() + " " + this.getModelo() + " está agora " + (this.getLigado() ? "ligado." : "desligado.")); //essa linha é pura majestade sintática
 	}
 	
 	protected void insereDisco(int polegadas) {
 		if((polegadas==7) && (this.getSuporta45rpm()==false)) {
 			System.out.println("Disco não pode ser tocado.");
-			if(this.getAgulhaLevantada()!=true) this.agulhaLevanta(); //se não houver esse double check redundante, uma mensagem redundante é printada
+			this.setEmFuncionamento(false);
+			this.agulhaLevanta(); //se não houver esse double check redundante, uma mensagem redundante é printada
 		}
 		if((polegadas!=7) && (polegadas!=12)) {
 			System.out.println("Insira apenas discos.");
-			if(this.getAgulhaLevantada()!=true) this.agulhaLevanta();
+			this.setEmFuncionamento(false);
+			this.agulhaLevanta();
 		}
-		this.agulhaAbaixa(); //disco é reconhecido e começa a girar
+		else {
+			this.setEmFuncionamento(true); //Espero que isso não seja confiar demais, até esse ponto não deveria ter nenhum erro
+			this.agulhaAbaixa(); //disco é reconhecido e começa a girar
+		}
 	}
 	
 	protected void agulhaLevanta() {
-		if(this.getEmFuncionamento()==false) System.out.println("Sua caríssima agulha de tipo " + this.getAgulhaTipo() + " se perde em meio aos fios dos eletrodomésticos. Boa sorte");
-		if(this.getAgulhaLevantada()) System.out.println("A agulha aponta para o teto e reproduz a melodia que consegue capturar de uma lâmpada.");
-		System.out.println("O pitch diminui até finalmente chegar em 0. A música para");
-		this.agulhaLevantada=true;
+		if(this.getLigado()==false) System.out.println("Sua caríssima agulha de tipo " + this.getAgulhaTipo() + " se perde em meio aos fios dos eletrodomésticos. Boa sorte");
+		if((this.getAgulhaLevantada()) && (this.getLigado()) && (this.getEmFuncionamento())) System.out.println("A agulha aponta para o teto e reproduz a melodia que consegue capturar de uma lâmpada.");
+		if(this.getEmFuncionamento()) {
+			System.out.println("O pitch diminui até finalmente chegar em 0. A música para");
+			this.agulhaLevantada=true;
+		}
+		else {
+			System.out.println("A agulha se ergue");
+			this.agulhaLevantada=true;
+	}
 	}
 
 	protected void agulhaAbaixa() {
 		if(this.getAgulhaLevantada()==false) System.out.println("Você se pergunta de onde a agulha está tirando músicas do Slayer");
 		System.out.println("A agulha retorna ao seu habitat natural, junto com a música.");
 		this.agulhaLevantada=false;
+		this.setEmFuncionamento(true);
 	}
 }
