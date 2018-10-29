@@ -31,8 +31,11 @@ public class Abstracao {
 		apoio.onoff();
 		System.out.println("Vamos por o primeiro tt a teste inserindo um 12 polegadas.");
 		principal.insereDisco(12);
-		System.out.println("Como não sobrou dinheiro para comprar mais discos, vamos ter de testar com um ep do João e Maria, que é um disco menor que deve ser rodado a um tal de 45 rpm.");
+		System.out.println("Como não sobrou dinheiro para comprar mais discos, vamos ter de testar com um ep velho do João e Maria achado na gaveta, que é um disco menor que deve ser rodado a um tal de 45 rpm.");
 		apoio.insereDisco(7); //opa!
+		System.out.println("Vamos aproveitar que estamos nesse clima de velharia e tentar inserir um disquete no toca disco 1, já que parece que é só ele que reproduz velharias menores.");
+		principal.agulhaLevanta();
+		principal.insereDisco(3); //was?
 		System.out.println("No Spotify tem anúncios, e em LP tem esses barulhos que me distraem. Estou desiludido com o mercado fonográfico, vou fazer o próximo exercício do desafio java");
 		principal.onoff();
 		apoio.onoff();
