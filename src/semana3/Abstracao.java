@@ -9,22 +9,27 @@ package semana3;
 
 public class Abstracao {
 	public static void main(String[] args) {
-		Agulha at=new Agulha();
-		at.setTipo("Shibata");
-		at.setPeso(3);
-		at.setPrecisao(6);
 		TocaDisco principal=new TocaDisco();
 		principal.setMarca("Rega");
 		principal.setModelo("Planar P1");
 		principal.setSuporta45rpm(true);
+		principal.setAgulhaTipo("Shibata");
+		principal.setAgulhaPeso(3);
+		principal.setAgulhaPrecisao(6);
 		
 		TocaDisco apoio=new TocaDisco();
 		apoio.setMarca("Technics");
 		apoio.setModelo("1200 MK2");
 		apoio.setSuporta45rpm(false);
+		apoio.setAgulhaTipo("Diamante");
+		apoio.setAgulhaPeso(5);
+		apoio.setAgulhaPrecisao(9);
 		
 		principal.onoff();
 		apoio.onoff();
-		at.levanta();
+		principal.insereDisco(12);
+		apoio.insereDisco(7); //opa!
+		principal.onoff();
+		apoio.onoff();
 	}
 }
