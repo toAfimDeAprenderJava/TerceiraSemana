@@ -90,9 +90,9 @@ public class TocaDisco {
 		if((polegadas==7) && (this.getSuporta45rpm()==false)) {
 			System.out.println("Disco não pode ser tocado.");
 			this.setEmFuncionamento(false);
-			this.agulhaLevanta(); //se não houver esse double check redundante, uma mensagem redundante é printada
+			this.agulhaLevanta();
 		}
-		if((polegadas!=7) && (polegadas!=12)) {
+		else if(polegadas!=12) {
 			System.out.println("Insira apenas discos.");
 			this.setEmFuncionamento(false);
 			this.agulhaLevanta();
