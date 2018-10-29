@@ -1,6 +1,6 @@
 package semana3;
 
-public class TocaDisco {
+class TocaDisco {
 	private boolean ligado=false;
 	private boolean emFuncionamento=false;
 	private String marca;
