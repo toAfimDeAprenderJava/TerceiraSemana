@@ -8,7 +8,7 @@ public class TocaDisco {
 	private String agulhaTipo;
 	private int agulhaPeso;
 	private int agulhaPrecisao;
-	private boolean agulhaLevantada;
+	private boolean agulhaLevantada=true;
 	
 	//getters e setters dos atributos
 	protected String getMarca() {
@@ -28,11 +28,16 @@ public class TocaDisco {
 	}
 	
 	protected String getAgulhaTipo() {
-		return agulhaTipo;
+		return this.agulhaTipo;
 	}
-	//não precisamos saber do peso nem precisão da agulha
+	protected int getAgulhaPeso() {
+		return this.agulhaPeso;
+	}
+	protected int getAgulhaPrecisao() {
+		return this.agulhaPrecisao;
+	}
 	protected boolean getAgulhaLevantada() {
-		return agulhaLevantada;
+		return this.agulhaLevantada;
 	}
 	
 	protected void setMarca(String marca) {
@@ -73,17 +78,17 @@ public class TocaDisco {
 			this.agulhaLevanta();
 		this.setEmFuncionamento (false);
 		}
-		System.out.println("Seu " + this.getMarca() + " " + this.getModelo() + " está agora " + (this.getEmFuncionamento() ? "ligado." : "desligado."));
+		System.out.println("Seu " + this.getMarca() + " " + this.getModelo() + " está agora " + (this.getEmFuncionamento() ? "ligado." : "desligado.")); //essa linha é pura majestade sintática
 	}
 	
 	protected void insereDisco(int polegadas) {
 		if((polegadas==7) && (this.getSuporta45rpm()==false)) {
 			System.out.println("Disco não pode ser tocado.");
-			this.agulhaLevanta();
+			if(this.getAgulhaLevantada()!=true) this.agulhaLevanta(); //se não houver esse double check redundante, uma mensagem redundante é printada
 		}
-		if(polegadas!=12) {
+		if((polegadas!=7) && (polegadas!=12)) {
 			System.out.println("Insira apenas discos.");
-			this.agulhaLevanta();
+			if(this.getAgulhaLevantada()!=true) this.agulhaLevanta();
 		}
 		this.agulhaAbaixa(); //disco é reconhecido e começa a girar
 	}
