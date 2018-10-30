@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c2fc710-6f89-4096-b2c9-bf0c9102c932" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ExerciciosJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ExerciciosJava.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/semana3/Abstracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semana3/Abstracao.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,19 +101,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/semana3/Abstracao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="171">
               <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/semana3/HierarquiaPolimorfismo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="157">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
@@ -184,7 +182,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540862141609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540863666065" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -214,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HierarquiaPolimorfismo">
     <configuration name="Abstracao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="semana3.Abstracao" />
       <module name="ExerciciosJava" />
@@ -228,8 +226,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HierarquiaPolimorfismo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="semana3.HierarquiaPolimorfismo" />
+      <module name="ExerciciosJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="semana3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Abstracao" />
+      <item itemvalue="Application.HierarquiaPolimorfismo" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HierarquiaPolimorfismo" />
         <item itemvalue="Application.Abstracao" />
       </list>
     </recent_temporary>
@@ -300,17 +316,17 @@
     <entry file="file://$PROJECT_DIR$/src/semana7/Dojo.java" />
     <entry file="file://$PROJECT_DIR$/src/semanaFinal/ExercicioFinal.java" />
     <entry file="file://$PROJECT_DIR$/src/semana1/Variaveis.java" />
-    <entry file="file://$PROJECT_DIR$/src/semana3/HierarquiaPolimorfismo.java">
+    <entry file="file://$PROJECT_DIR$/src/semana3/Abstracao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="171">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/semana3/Abstracao.java">
+    <entry file="file://$PROJECT_DIR$/src/semana3/HierarquiaPolimorfismo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state relative-caret-position="157">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
