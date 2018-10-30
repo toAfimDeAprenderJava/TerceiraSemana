@@ -14,8 +14,7 @@ package semana3;
  * Acrescentar na classe Automóvel o método mudarOleo()
  *  encapsule todos os metodos e atributos
  */
-public class HierarquiaPolimorfismo {
-	public static void main(String[] args) {
+
 		abstract class  Veiculo {
 
 			//métodos abstratos

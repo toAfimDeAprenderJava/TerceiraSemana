@@ -7,7 +7,7 @@ package semana3;
  *
  */
 public class Abstracao {
-	public static void main(String[] args) {
+
 
 		private String cor = "Vermelho";
 		private String marca = "Ford";
@@ -54,4 +54,3 @@ public class Abstracao {
 			carro.imprimir();
 		}
 	}
-}
